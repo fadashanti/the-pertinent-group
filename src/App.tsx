@@ -9,6 +9,9 @@ import { IdeaPage } from './components/IdeaPage';
 import { InsightsPage } from './components/InsightsPage';
 import { ContactPage } from './components/ContactPage';
 import { LeadMagnetPage } from './components/LeadMagnetPage';
+import { LegalNoticePage } from './components/LegalNoticePage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsOfUsePage } from './components/TermsOfUsePage';
 
 export default function App() {
   const location = useLocation();
@@ -29,6 +32,9 @@ export default function App() {
           <Route path="/insights" element={<InsightsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/lead-magnet" element={<LeadMagnetPage />} />
+          <Route path="/legal-notice" element={<LegalNoticePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="*" element={<HomePage />} /> {/* Fallback for unknown routes */}
         </Routes>
       </main>

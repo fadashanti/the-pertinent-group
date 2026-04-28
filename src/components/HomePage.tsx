@@ -3,6 +3,19 @@ import { Building2, Globe, Users, Target } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router-dom';
+import consultingImg from '@/assets/consulting.jpg';
+
+// Import partner logos
+import anpiLogo from '@/assets/tpg-partners/anpi-logo.png';
+import bniLogo from '@/assets/tpg-partners/bni.jpg';
+import ecobankLogo from '@/assets/tpg-partners/Ecobank_Logo_400x400.webp';
+import images1 from '@/assets/tpg-partners/images (1).png';
+import imagesJpg from '@/assets/tpg-partners/images.jpg';
+import imagesPng from '@/assets/tpg-partners/images.png';
+import logo1 from '@/assets/tpg-partners/logo (1).png';
+import moovLogo from '@/assets/tpg-partners/logo-moov-africa_niger-350x250.png';
+import logoPng from '@/assets/tpg-partners/logo.png';
+import pertinencesLogo from '@/assets/tpg-partners/Pertinences-CI-Logo-Icone-orange-_-transparent.png';
 
 export function HomePage() {
   const domains = [
@@ -41,11 +54,22 @@ export function HomePage() {
     },
   ];
 
-  const partners = ['ACME', 'TechCorp', 'GlobalSolutions', 'InnovateNow', 'FutureGroup'];
+  const partners = [
+    { name: 'ANPI', logo: anpiLogo },
+    { name: 'BNI', logo: bniLogo },
+    { name: 'Ecobank', logo: ecobankLogo },
+    { name: 'Moov Africa', logo: moovLogo },
+    { name: 'Pertinences CI', logo: pertinencesLogo },
+    { name: 'Partner 1', logo: images1 },
+    { name: 'Partner 2', logo: imagesJpg },
+    { name: 'Partner 3', logo: imagesPng },
+    { name: 'Partner 4', logo: logo1 },
+    { name: 'Partner 5', logo: logoPng },
+  ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* ... (Hero Section and other sections remain the same until Testimonials) ... */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-noir-profond via-noir-profond to-gris-anthracite overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
@@ -64,7 +88,7 @@ export function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Quand la perspicacité alimente l'influence
+              Where insight fuels influence
             </motion.h1>
             <motion.p
               className="font-sans text-xl md:text-2xl text-blanc-pur/80 mb-8 max-w-3xl mx-auto"
@@ -89,7 +113,6 @@ export function HomePage() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
@@ -101,7 +124,6 @@ export function HomePage() {
         </motion.div>
       </section>
 
-      {/* Presentation Section */}
       <section className="py-20 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -147,7 +169,7 @@ export function HomePage() {
             >
               <div className="relative rounded-lg overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1758518729685-f88df7890776?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwbWVldGluZyUyMGNvbGxhYm9yYXRpb258ZW58MXx8fHwxNzYzNDY4OTAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src={consultingImg}
                   alt="Équipe TPG en collaboration"
                   className="w-full h-[400px] object-cover"
                 />
@@ -162,7 +184,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Domains Section */}
       <section className="py-20 bg-blanc-pur">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -204,7 +225,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* IDEA Method Section */}
       <section className="py-20 bg-noir-profond relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q0QzY4QSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
@@ -310,8 +330,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-[#F5F5F5]">
+      <section className="py-20 bg-[#F5F5F5] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -346,30 +365,42 @@ export function HomePage() {
             ))}
           </div>
 
-          {/* Partner Logos */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="border-t border-noir-profond/10 pt-12"
-          >
-            <p className="text-center text-gris-anthracite/60 mb-8">Nos partenaires</p>
-            <div className="flex flex-wrap justify-center items-center gap-12">
-              {partners.map((partner, index) => (
-                <div
-                  key={index}
-                  className="text-noir-profond/40 font-sans text-2xl hover:text-or-doux transition-colors cursor-pointer"
-                >
-                  {partner}
-                </div>
-              ))}
+          {/* Partner Logos Marquee */}
+          <div className="mt-20">
+            <p className="text-center text-gris-anthracite/60 mb-12 uppercase tracking-widest text-sm font-semibold">
+              Nos partenaires & clients
+            </p>
+            <div className="relative flex overflow-hidden">
+              <motion.div
+                className="flex whitespace-nowrap gap-16 items-center py-4"
+                animate={{
+                  x: [0, "-50%"],
+                }}
+                transition={{
+                  duration: 30,
+                  ease: "linear",
+                  repeat: Infinity,
+                }}
+              >
+                {/* Two sets of logos for seamless loop */}
+                {[...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 w-40 h-20"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                ))}
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
       <section className="py-20 bg-blanc-pur">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -388,7 +419,8 @@ export function HomePage() {
               <Link to="/contact" className="bg-noir-profond text-blanc-pur hover:bg-noir-profond/90 px-8 py-6 text-lg">
                 Prendre contact
               </Link>
-            </Button>          </motion.div>
+            </Button>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/black-logo.jpg';
 import { Linkedin, Twitter, Facebook, Mail } from 'lucide-react';
 
 export function Footer() {
@@ -10,7 +10,7 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <img src={logo} alt="The Pertinent Group Logo" className="h-10 w-auto" />
+              <img src={logo} alt="The Pertinent Group Logo" className="h-16 w-auto" />
               <span className="font-semibold">The Pertinent Group</span>
             </Link>
             <p className="text-blanc-pur/80 mb-4">
@@ -76,19 +76,28 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Légal</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-blanc-pur/80 hover:text-or-doux transition-colors">
+                <Link
+                  to="/legal-notice"
+                  className="text-blanc-pur/80 hover:text-or-doux transition-colors"
+                >
                   Mentions légales
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blanc-pur/80 hover:text-or-doux transition-colors">
+                <Link
+                  to="/privacy-policy"
+                  className="text-blanc-pur/80 hover:text-or-doux transition-colors"
+                >
                   Politique de confidentialité
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blanc-pur/80 hover:text-or-doux transition-colors">
+                <Link
+                  to="/terms-of-use"
+                  className="text-blanc-pur/80 hover:text-or-doux transition-colors"
+                >
                   Conditions d'utilisation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

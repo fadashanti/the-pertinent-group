@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { TrendingUp, Users2, Lightbulb, Award, Heart, Globe2 } from 'lucide-react';
+import mykemBelloImg from '@/assets/mykem-bello.jpg';
 
 export function AboutPage() {
   const values = [
@@ -11,27 +12,6 @@ export function AboutPage() {
     { letter: 'G', word: 'Gratitude', description: 'Honorer chaque opportunité avec respect et reconnaissance' },
     { letter: 'H', word: 'Humilité', description: 'Écouter plus qu’on ne parle, et continuer à apprendre' },
     { letter: 'T', word: 'Travail en équipe', description: 'Gagner ensemble, ou ne pas gagner du tout' },
-  ];
-
-  const team = [
-    {
-      name: 'Mykem Bello',
-      role: 'Directrice Gérérale',
-      image: 'https://images.unsplash.com/photo-1543132220-7bc04a0e790a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGV4ZWN1dGl2ZSUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MzQ0NTUwOHww&ixlib=rb-4.1.0&q=80&w=1080',
-      bio: 'Experte en stratégie d\'entreprise avec plus de 15 ans d\'expérience en conseil et leadership international.',
-    },
-    {
-      name: 'Prénom Nom',
-      role: 'Occupation',
-      image: 'https://images.unsplash.com/photo-1621959614020-e12047c380ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWxzfGVufDF8fHx8MTc2MzQ2ODkwMHww&ixlib=rb-4.1.0&q=80&w=1080',
-      bio: 'Spécialiste de l\'expansion internationale et de la gouvernance d\'entreprise en Afrique.',
-    },
-    {
-      name: 'Prénom Nom',
-      role: 'Occupation',
-      image: 'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBjb2FjaGluZ3xlbnwxfHx8fDE3NjM0MzYwODB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      bio: 'Coach certifié ICF avec une expertise en développement du leadership et transformation organisationnelle.',
-    },
   ];
 
   const stats = [
@@ -161,51 +141,59 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-[#F5F5F5]">
+      {/* Founder Spotlight */}
+      <section className="py-20 bg-blanc-pur">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-sans font-semibold text-4xl md:text-5xl text-noir-profond mb-4">
-              Notre Équipe Dirigeante
-            </h2>
-            <p className="text-gris-anthracite/70 text-lg max-w-2xl mx-auto">
-              Des experts passionnés au service de votre réussite
-            </p>
-          </motion.div>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
+                <ImageWithFallback
+                  src={mykemBelloImg}
+                  alt="Mykem Bello - Stratège & Co-fondatrice TPG"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-noir-profond/40 to-transparent"></div>
+              </div>
+            </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-blanc-pur rounded-lg overflow-hidden shadow-lg group"
-              >
-                <div className="relative overflow-hidden">
-                  <ImageWithFallback
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-noir-profond/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-sans font-semibold text-center text-2xl text-noir-profond mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-or-doux mb-4 text-center">{member.role}</p>
-                  <p className="text-gris-anthracite/70 text-center text-sm leading-relaxed">{member.bio}</p>
-                </div>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="font-sans font-semibold text-4xl text-noir-profond mb-2">
+                Mykem Bello
+              </h2>
+              <p className="text-or-doux font-semibold text-xl mb-8 uppercase tracking-wider">
+                Stratège & Co-fondatrice
+              </p>
+              <div className="space-y-6 text-gris-anthracite/80 leading-relaxed text-lg">
+                <p>
+                  Mykem Bello est la stratège et cofondatrice de The Pertinent Group.
+                </p>
+                <p>
+                  Forte de plus de 25 ans d’expérience internationale, elle accompagne décideurs publics et privés dans des environnements complexes où se croisent enjeux économiques, innovation et dynamiques géopolitiques.
+                </p>
+                <p>
+                  Au fil de son parcours, elle a développé une expertise reconnue dans l’analyse d’écosystèmes, le positionnement stratégique et l’alignement d’intérêts entre acteurs institutionnels, investisseurs et opérateurs locaux.
+                </p>
+                <p>
+                  Ses travaux récents incluent des initiatives de positionnement en lien avec des pôles d’innovation avancés, des réflexions stratégiques autour de l’intelligence artificielle, ainsi que des missions de cartographie d’acteurs sur plusieurs marchés africains.
+                </p>
+                <p>
+                  Elle est particulièrement appréciée pour sa capacité à conjuguer vision stratégique, intelligence interculturelle et exigence d’exécution, transformant des ambitions complexes en dynamiques opérationnelles concrètes.
+                </p>
+                <p className="font-medium text-noir-profond italic">
+                  À travers TPG, elle intervient à l’interface de l’influence et de l’action, avec une conviction constante : la stratégie n’a de valeur que si elle se traduit en impact durable.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

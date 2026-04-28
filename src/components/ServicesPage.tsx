@@ -5,7 +5,11 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
+// Import local service images
+import governanceImg from '@/assets/services/gouvernance.jpg';
+import expansionImg from '@/assets/services/expansion-internationale.jpg';
+import leadershipImg from '@/assets/services/leadership.jpg';
+import coachingImg from '@/assets/services/coaching.jpg';
 
 export function ServicesPage() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -25,7 +29,7 @@ export function ServicesPage() {
         'Soutien à la vente et au marketing des produits/services',
         'Optimisation de l’efficacité opérationnelle',
       ],
-      image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJhdGVnaWMlMjBwbGFubmluZ3xlbnwxfHx8fDE3NjM0MzUxNTV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: governanceImg,
       color: '#D4AF37',
     },
     {
@@ -42,7 +46,7 @@ export function ServicesPage() {
         'Traduction professionnelle & interprétation multilingue',
         'Cartographie des parties prenantes & stratégie de positionnement',
       ],
-      image: 'https://images.unsplash.com/photo-1621959614020-e12047c380ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWxzfGVufDF8fHx8MTc2MzQ2ODkwMHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: expansionImg,
       color: '#0A2342',
     },
     {
@@ -52,14 +56,14 @@ export function ServicesPage() {
       subtitle: 'Programmes sur mesure',
       description: 'Développez le potentiel de vos leaders et de vos équipes',
       longDescription:
-        'Selon les besoins identifiés, nous formons vos collaborateurs à relever tous leurs défis avec passion et enthousiasme !\n Que ce soit pour développer des compétences managériales, comportementales ou métiers, nous saurons vous proposer les meilleures formules',
+        'Selon les besoins identifiés, we formons vos collaborateurs à relever tous leurs défis avec passion et enthousiasme !\n Que ce soit pour développer des compétences managériales, comportementales ou métiers, we saurons vous proposer les meilleures formules',
       benefits: [
         'Formations leadership personnalisées',
         'Ateliers de team building stratégique',
         'Programmes de mentorat',
         'Certification en management d\'excellence',
       ],
-      image: 'https://images.unsplash.com/photo-1758518729685-f88df7890776?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwbWVldGluZyUyMGNvbGxhYm9yYXRpb258ZW58MXx8fHwxNzYzNDY4OTAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: leadershipImg,
       color: '#D4AF37',
     },
     {
@@ -76,7 +80,7 @@ export function ServicesPage() {
         'Coaching de vie et état d\'esprit',
         'Coaching spirituel et foi',
       ],
-      image: 'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBjb2FjaGluZ3xlbnwxfHx8fDE3NjM0MzYwODB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: coachingImg,
       color: '#0A2342',
     },
   ];

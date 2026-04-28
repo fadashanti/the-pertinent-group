@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/black-logo.jpg';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +29,7 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-noir-profond shadow-lg' : 'bg-noir-profond/95'
+        isScrolled || location.pathname !== '/' ? 'bg-noir-profond shadow-lg' : 'bg-noir-profond/95'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -40,7 +40,7 @@ export function Navigation() {
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <img src={logo} alt="The Pertinent Group Logo" className="h-10 w-auto" />
+            <img src={logo} alt="The Pertinent Group Logo" className="h-14 w-auto" />
             <span className="text-blanc-pur hidden sm:block font-semibold">
               The Pertinent Group
             </span>
