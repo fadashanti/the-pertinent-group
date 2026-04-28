@@ -14,7 +14,7 @@ export function Footer() {
               <span className="font-semibold">The Pertinent Group</span>
             </Link>
             <p className="text-blanc-pur/80 mb-4">
-              Where Insight Fuels Influence
+              Quand la perspicacité alimente l'influence
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-or-doux hover:text-blanc-pur transition-colors">
